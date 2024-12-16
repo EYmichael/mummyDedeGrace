@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="bg_container">
+        <p class="auto-typed"></p>
+        <div class="box">
+            <div class="circle" id="click">
+                <h1>M<span class="e">err</span>y<br>Ch<span class="e">ristm</span>as</h1>
+                <img src="./IMG-20241211-WA0006.png" alt="">
+            </div>
+        </div>
+        <audio src="./Silent Night _20241213_151947.mp3" id="autoPlay" controls></audio>
+
+        <style>
+            audio {
+                position: absolute;
+                top: 100px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                background: none;
+                transform: scale(0.9);
+                animation: disappear 10s forwards;
+                animation-delay: 10s;
+            }
+
+            @keyframes disappear {
+                0% {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                100% {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+        </style>
+    </div>
+
+
+    <script>
+        function bubbles() {
+            var count = 200;
+            var bgCon = document.querySelector(".bg_container");
+            var i = 0;
+            while (i < count) {
+
+                var bubble = document.createElement("i");
+
+                var x = Math.floor(Math.random() * window.innerWidth);
+                var y = Math.floor(Math.random() * window.innerHeight);
+
+                var size = Math.random() * 10;
+
+                bubble.style.left = x + 'px';
+                bubble.style.top = y + 'px';
+                bubble.style.width = 1 + size + 'px';
+                bubble.style.height = 1 + size + 'px';
+
+                bubble.style.animationDuration = 1 + size + 's';
+                bubble.style.animationDelay = size + 's';
+
+
+                bgCon.appendChild(bubble);
+                i++;
+            }
+        } bubbles();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed(".auto-typed", {
+            strings: ['Wishing Mummy Dede Grace, a true blessing', 'a happy Christmas Celebration like never before', 'May this season bring you as much happiness as you have always given me.', 'Merry Christmas from Michael DP'],
+            typeSpeed: 150,
+            backSpeed: 50,
+            loop: true
+        })
+    </script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
